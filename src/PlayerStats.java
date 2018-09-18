@@ -30,6 +30,7 @@ public class PlayerStats {
 		int walks = input.nextInt();
 		
 		System.out.println(BattingAverage(atBats, hits));
+		System.out.println(OnBasePercentage(hits, walks, atBats) + "%");
 		
 	}
 	
@@ -39,7 +40,8 @@ public class PlayerStats {
 		
 	}
 	
-	public double OnBasePercentage() {
+	public static double OnBasePercentage(int hits, int walks, int atBats) {
+		double onBasePercentage = (((double)hits + (double)walks) / ((double)atBats + (double)walks))*100;
 		return onBasePercentage;
 		
 	}
